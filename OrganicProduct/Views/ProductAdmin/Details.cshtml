@@ -1,0 +1,48 @@
+﻿@model OrganicProduct.Models.Product
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3><i class="fa fa-info-circle me-2"></i>Product Details</h3>
+
+    <div class="card mt-3 shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Product Name</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">Description</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
+
+                <dt class="col-sm-3">Price</dt>
+                <dd class="col-sm-9">₹@Model.Price</dd>
+
+                <dt class="col-sm-3">Stock</dt>
+                <dd class="col-sm-9">@Model.Stock</dd>
+
+                <dt class="col-sm-3">Category</dt>
+                 <dd class="col-sm-9">@Model.Category</dd>
+               
+
+                <dt class="col-sm-3">Image</dt>
+                <dd class="col-sm-9">
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img src="@Model.ImageUrl" class="img-fluid rounded shadow-sm" style="max-height:150px;" alt="Product Image" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">No image available.</span>
+                    }
+                </dd>
+               
+            </dl>
+
+            <a href="@Url.Action("Index")" class="btn btn-secondary">
+                <i class="fa fa-arrow-left me-1"></i> Back
+            </a>
+        </div>
+    </div>
+</div>

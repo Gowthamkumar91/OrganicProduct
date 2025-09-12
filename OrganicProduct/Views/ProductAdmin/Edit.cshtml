@@ -1,0 +1,69 @@
+﻿@model OrganicProduct.Models.Product
+@{
+    ViewData["Title"] = "Edit Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3 class="mb-4">Edit Product</h3>
+   
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="ProductId" />
+        <input type="hidden" asp-for="ImageUrl" />
+
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Stock" class="form-label"></label>
+            <input asp-for="Stock" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="ImageFile" class="form-label">Change Product Image</label>
+            <input type="file" class="form-control" name="ImageFile" id="ImageFile" />
+        </div>
+       
+
+        <!-- Retain existing image path even if no new image is selected -->
+       @*  <input type="hidden" asp-for="ImageUrl" value="@Model.ImageUrl" /> *@
+
+        <!-- Show existing image (optional preview) -->
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="mb-3">
+                <label>Current Image:</label><br />
+                <img src="@Model.ImageUrl" width="150" />
+            </div>
+        }
+
+        <div class="mb-3">
+            <label asp-for="Category" class="form-label"></label>
+            <input asp-for="Category" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">
+            <i class="fa fa-arrow-left me-1"></i> Back
+        </a>
+    </form>
+</div>

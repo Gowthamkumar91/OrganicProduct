@@ -1,0 +1,34 @@
+﻿@model List<OrganicProduct.Models.Product>
+@{
+    ViewData["Title"] = "Manage Stock";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>Manage Stock - Low Quantity Products</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Stock</td>
+                    <td>₹@item.Price</td>
+                    <td>@item.Category</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "ProductAdmin", new { id = item.ProductId })" class="btn btn-sm btn-warning">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+﻿@model List<OrganicProduct.Models.Product>
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<h2>@(ViewBag.SelectedCategory ?? "All Products")</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text text-success fw-bold">₹@item.Price</p>
+
+                   @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Cart" asp-action="AddToCart">
+                            <input type="hidden" name="productId" value="@item.ProductId" />
+                            <button type="submit" class="btn btn-sm btn-success">Add to Cart</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <button onclick="handleGuestCart(@item.ProductId)" class="btn btn-sm btn-warning">
+                            Add to Cart
+                        </button>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

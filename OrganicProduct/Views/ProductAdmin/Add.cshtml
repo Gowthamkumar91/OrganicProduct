@@ -1,0 +1,48 @@
+﻿@model OrganicProduct.Models.Product
+@{
+    ViewData["Title"] = "Add Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3 class="mb-4">Add New Product</h3>
+
+    <form asp-action="Add" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Stock" class="form-label"></label>
+            <input asp-for="Stock" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="ImageFile" class="form-label">Product Image</label>
+            <input type="file" class="form-control" name="ImageFile" id="ImageFile" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Category" class="form-label"></label>
+            <input asp-for="Category" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

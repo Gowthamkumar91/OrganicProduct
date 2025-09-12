@@ -1,0 +1,69 @@
+﻿@model List<OrganicProduct.Models.Product>
+@{
+    ViewData["Title"] = "Manage Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3 class="mb-3">Manage Products</h3>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+        </div>
+    }
+
+    <a class="btn btn-success mb-3" href="@Url.Action("Add")">
+        <i class="fa fa-plus me-1"></i> Add Product
+    </a>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price (₹)</th>
+                    <th>Stock</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>@product.Price</td>
+                        <td>@product.Stock</td>
+                      
+                        <td>
+                            @if (!string.IsNullOrEmpty(product.ImageUrl))
+                            {
+                                <img src="@product.ImageUrl" width="50" height="50" class="img-thumbnail" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">No Image</span>
+                            }
+                        </td>
+                        <td>@product.Category</td>
+                        <td>
+                            <a class="btn btn-sm btn-info" href="@Url.Action("Details", new { id = product.ProductId })"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", new { id = product.ProductId })"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = product.ProductId })" onclick="return confirm('Are you sure to delete this product?');"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">No products found.</p>
+    }
+</div>

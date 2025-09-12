@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">Welcome, Admin </h2>
+
+<!--  Summary Cards -->
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <div class="card text-bg-primary shadow">
+            <div class="card-body">
+                <h5 class="card-title">Total Products</h5>
+                <h3>@ViewBag.TotalProducts</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card text-bg-success shadow">
+            <div class="card-body">
+                <h5 class="card-title">Total Orders</h5>
+                <h3>@ViewBag.TotalOrders</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card text-bg-warning shadow">
+            <div class="card-body">
+                <h5 class="card-title">Total Users</h5>
+                <h3>@ViewBag.TotalUsers</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Low Stock Alert Table -->
+<div class="mt-4">
+    <h4> Low Stock Products</h4>
+    @if (ViewBag.LowStockProducts != null && ViewBag.LowStockProducts.Count > 0)
+    {
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th style="width:60%">Product</th>
+                    <th style="width:30%">Stock Left</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.LowStockProducts)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td class="text-danger fw-bold">@item.Stock</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted"> All products have sufficient stock.</p>
+    }
+</div>
+
+<!--  Quick Action Buttons -->
+<div class="mt-4">
+    <h4> Quick Actions</h4>
+    <a href="/ProductAdmin/Add" class="btn btn-primary me-2 mb-2">
+        <i class="fa fa-plus"></i> Add Product
+    </a>
+    <a href="/ProductAdmin/Index" class="btn btn-secondary me-2 mb-2">
+        <i class="fa fa-box"></i> Manage Products
+    </a>
+    <a href="/ProductAdmin/ManageStock" class="btn btn-warning me-2 mb-2">
+        <i class="fa fa-chart-line"></i> Manage Stock
+    </a>
+</div>

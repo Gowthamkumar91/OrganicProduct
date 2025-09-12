@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <h3 class="mb-4"><i class="fa fa-gear me-2"></i>Admin Settings</h3>
+
+    <div class="row">
+      
+        <!-- Change Password -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Change Password</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" placeholder="Enter new password" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password" disabled>
+                        </div>
+                        <button type="submit" class="btn btn-primary" disabled>Update Password</button>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

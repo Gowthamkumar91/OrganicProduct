@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="main-banner d-flex align-items-center">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-lg-6 pt-2 mt-2 ps-5">
+                <h2 class="display-1 lh-sm">
+                    <span class="fw-bold text-success">Organic</span> Foods at your <span class="fw-bold">Doorsteps</span>
+                </h2>
+                <p class="fs-4">Dignissim massa diam elementum.</p>
+
+                <a href="#" class="btn btn-success text-uppercase fs-6 rounded-pill px-4 py-3 mt-4 mb-5">
+                    Start Shopping
+                </a>
+
+            </div>
+
+        </div>
+        <div class="container-fluid px-0">
+            <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 g-0">
+                <div class="col">
+                    <div class="card border-0 bg-success rounded-0 p-4 text-light h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-3 text-center">
+                                <i class="fa-solid fa-arrows-rotate fa-3x text-white mb-4"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0">
+                                    <h5 class="text-light">Fresh from farm</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 bg-secondary rounded-0 p-4 text-light h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-3 text-center">
+                                <i class="fa-solid fa-seedling fa-3x text-white mb-4"></i>
+
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0">
+                                    <h5 class="text-light">100% Organic</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 bg-danger rounded-0 p-4 text-light h-100">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-3 text-center">
+                                <i class="fa-solid fa-truck fa-3x text-white mb-4"></i>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body p-0">
+                                    <h5 class="text-light">Free delivery</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipi elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="py-5 overflow-hidden">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+              <h2 class="section-title">Category</h2>
+            </div>
+          </div>
+            
+        </div>
+      
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="category-carousel swiper">
+              <div class="swiper-wrapper">
+                <a href="/User/Shop?category=Fruits" class="nav-link swiper-slide text-center">
+                  <img src="img/Fruits.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h3 class="fs-6 mt-3 fw-normal category-title">Fruits</h3>
+                </a>
+                <a href="/User/Shop?category=Vegetables" class="nav-link swiper-slide text-center">
+                  <img src="img/vegetables.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h3 class="fs-6 mt-3 fw-normal category-title">Veges</h3>
+                </a>
+                <a href="/User/Shop?category=DryFruits" class="nav-link swiper-slide text-center">
+                  <img src="img/Dryfruit.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <h3 class="fs-6 mt-3 fw-normal category-title">DryFruits</h3>
+                </a>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+   </section>
+
+<section class="py-4">
+    <div class="container-fluid">
+        <div class="row gx-3">
+
+            <!-- 🟩 Left Big Banner -->
+            <div class="col-lg-7">
+                <div class="position-relative h-100 w-100" style="background: url('/img/banner-ad-1.jpg') center center / cover no-repeat; height: 420px; border-radius:5px">
+                    <div class="p-5 text-white position-absolute top-50 start-0 translate-middle-y">
+                        <h3 class="fw-bold fs-2">Items on SALE</h3>
+                     
+                        <a href="#" class="btn btn-light btn-sm mt-2">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🟥 Right Two Small Banners Stacked -->
+            <div class="col-lg-5 d-flex flex-column gap-3">
+
+                <!-- Top Right Box -->
+                <div class="position-relative flex-fill" style="background: url('/img/banner-ad-2.jpg') center center / cover no-repeat; min-height: 200px; border-radius:5px">
+                    <div class="p-4 text-white position-absolute top-50 start-0 translate-middle-y">
+                        <h4 class="fw-bold">Combo Offers</h4>
+                       
+                        <a href="#" class="btn btn-light btn-sm mt-1">Shop Now</a>
+                    </div>
+                </div>
+
+                <!-- Bottom Right Box -->
+                <div class="position-relative flex-fill" style="background: url('/img/banner-ad-3.jpg') center center / cover no-repeat; min-height: 200px; border-radius:5px">
+                    <div class="p-4 text-white position-absolute top-50 start-0 translate-middle-y">
+                        <h4 class="fw-bold">Discount Coupons</h4>
+                     
+                        <a href="#" class="btn btn-light btn-sm mt-1">Shop Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  
+
+
+

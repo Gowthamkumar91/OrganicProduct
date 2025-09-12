@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Order Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <h3 class="mb-4">Order Management</h3>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search by customer..." id="searchInput" />
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <select class="form-select" id="statusFilter">
+                <option value="">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped" id="ordersTable">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Total (₹)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>ORD001</td>
+                <td>Gautham K</td>
+                <td>2025-07-10</td>
+                <td>₹1200.00</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>ORD002</td>
+                <td>Saravanan K</td>
+                <td>2025-07-09</td>
+                <td>₹1850.00</td>
+                <td><span class="badge bg-info text-dark">Shipped</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>ORD003</td>
+                <td>JohnWick M</td>
+                <td>2025-07-07</td>
+                <td>₹740.00</td>
+                <td><span class="badge bg-success">Delivered</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>ORD004</td>
+                <td>Popeye R</td>
+                <td>2025-07-05</td>
+                <td>₹910.00</td>
+                <td><span class="badge bg-danger">Cancelled</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
