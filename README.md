@@ -23,11 +23,11 @@ A demo e-commerce application showcasing **ASP.NET Core MVC**, **Entity Framewor
 ## 📸 Screenshots
 ![Homepage](./screenshots/Home.png)  
 ![Aboutpage](./screenshots/About.png)  
-![Categorypage](./screenshots/Category.png)  
-![CartPage](./screenshots/Cart.png) 
+![Categorypage](./screenshots/Category.png)   
 ![Product-Fruits](./screenshots/Product-Fruits.png)
 ![Product-Veges](./screenshots/Product-Veges.png)
 ![Product-Dryfruits](./screenshots/Product-Dryfruits.png)
+![CartPage](./screenshots/Cart.png)
 ![AdminDashboard](./screenshots/AdminDashboard.png)
 ![Admin-ManageProduct](./screenshots/Admin-ManageProduct.png)
 
