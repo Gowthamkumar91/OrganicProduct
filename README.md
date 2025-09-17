@@ -16,7 +16,7 @@ A demo e-commerce application showcasing **ASP.NET Core MVC**, **Entity Framewor
 - **Frontend:** HTML, CSS, JS, Bootstrap  
 - **Backend:** ASP.NET Core MVC (C#) Entity Framework core 
 - **Database:** SQL Server + Stored Procedures  
-- **Tools:** Visual Studio 2022, GitHub  
+- **Tools:** Visual Studio 2022, GitHub.  
 
 ---
 
